@@ -1,5 +1,6 @@
 package main
 
+import "goPracticaStepik/module3/3.7 step/twoTask/conectGo"
 import (
 	"bufio"
 	"fmt"
@@ -30,6 +31,7 @@ func main() {
 
 	}
 
+	conectGo.Printik(unixTime)
 }
 
 // 2020-05-15 14:00:00
