@@ -11,8 +11,7 @@ func main() {
 	//		case string:
 	//			if string(c) == "s" {
 	//			}
-	//			switch operation {
-	//			case "+":
+	//			switch operation {	//			case "+":
 	//				res := value1.(float64) + value2.(float64)
 	//				fmt.Printf("%.4f", res)
 	//			case "-":
