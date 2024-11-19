@@ -34,7 +34,16 @@ func merge2Channels(fn func(int) int, in1 <-chan int, in2 <-chan int, out chan<-
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
+			sum := fn(<-in1) + fn(<-in2)
+			out <- sum
+			close(out)
+		}()
 
+		go func() {
+			defer wg.Done()
+			sum := fn(<-in1) + fn(<-in2)
+			out <- sum
+			close(out)
 		}()
 	}
 

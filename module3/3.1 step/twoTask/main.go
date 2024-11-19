@@ -9,20 +9,37 @@ func main() {
 	//	1000: []string{"Москва", "Санкт-Петербург", "Казань"}, // города с населением 1000 тыс. человек и более
 	//
 	//}
-
+	groupCity := map[int][]string{
+		10:   []string{"Огни", "Дербент", "Каспийск"},
+		100:  []string{"Махачкала", "Грозный", "Ставрополь"},
+		1000: []string{"Москва", "Санкт-Петербург", "Казань"},
+	}
 	cityPopulation := map[string]int{
-		"Махачкала":  900,
-		"Каспийск":   60,
-		"Грозный":    400,
-		"Дербент":    90,
-		"Ставрополь": 300,
+		"Moscaov":     54,
+		"Klinton":     65,
+		"kirovsk":     789,
+		"CPB":         345,
+		"NVZ":         548,
+		"Briansk":     579,
+		"KIpr":        65468,
+		"Harkov":      78645,
+		"Novosibirsk": 57498,
 	}
-	for k, v := range cityPopulation {
-		if v >= 100 && v <= 999 {
-			continue
-		} else {
-			delete(cityPopulation, k)
-		}
+	//for k, v := range cityPopulation {
+	//	if v >= 100 && v <= 999 {
+	//		continue
+	//	} else {
+	//		delete(cityPopulation, k)
+	//	}
+	//}
+	//fmt.Print(cityPopulation)
+
+	for key := range cityPopulation {
+		delete(cityPopulation, key)
 	}
-	fmt.Print(cityPopulation)
+	for _, v := range groupCity[100] {
+		cityPopulation[v] = 100
+	}
+	fmt.Println(len(groupCity))
+	fmt.Println(cityPopulation)
 }
